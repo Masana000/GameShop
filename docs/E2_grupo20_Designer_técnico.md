@@ -89,6 +89,7 @@ A arquitetura foi projetada para separar a lógica de grafos da interface.
 ---
 
 ## 3. Estrutura de Diretórios
+```shell
 gameshop-grafos/
 ├── docs/
 │ ├── README.md
@@ -109,7 +110,7 @@ gameshop-grafos/
 ├── data/
 │ └── dataset.json
 └── package.json
-
+```
 ---
 
 ## 4. Definição do Dataset
