@@ -75,7 +75,7 @@ Dessa forma, o uso de grafos permite explorar conexões indiretas e padrões est
 | Característica   | Escolha             | Justificativa                                |
 | ---------------- | ------------------- | -------------------------------------------- |
 | Dirigido ou não  | Não-dirigido        | Amizades são mútuas                          |
-| Ponderado ou não | Não-ponderado       | Similaridade baseada em contagem de conexões |
+| Ponderado ou não | Misto (U-U: Não-ponderado / U-J: Ponderado)| Amizades (U-U) consideram apenas a existência da conexão. Interações (U-J) usam a avaliação/rating do jogo como peso para a filtragem colaborativa. |
 | Tipo             | Geral + Bipartido   | Separação entre U–U e U–J                    |
 | Representação    | Lista de adjacência | Eficiência em grafos esparsos                |
 
