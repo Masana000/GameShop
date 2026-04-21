@@ -86,10 +86,11 @@ Dessa forma, o uso de grafos permite explorar conexões indiretas e padrões est
 USUÁRIOS (U-U amizade)
 
 ```mermaid
-(U1) -------- (U2)
-  |             |
-  |             |
-(U3) -------- (U4)
+graph TD
+    U1 --- U2
+    U1 --- U3
+    U2 --- U4
+    U3 --- U4
 ```
 INTERAÇÕES (U-J bipartido)
 
