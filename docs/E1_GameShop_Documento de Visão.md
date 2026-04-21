@@ -85,12 +85,12 @@ Dessa forma, o uso de grafos permite explorar conexões indiretas e padrões est
 
 USUÁRIOS (U-U amizade)
 
-´´´mermaid
+```mermaid
 (U1) -------- (U2)
   |             |
   |             |
 (U3) -------- (U4)
-´´´
+```
 INTERAÇÕES (U-J bipartido)
 
 U1 ─── J1
