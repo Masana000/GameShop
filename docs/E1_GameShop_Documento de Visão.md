@@ -94,16 +94,28 @@ graph LR
 ```
 INTERAÇÕES (U-J bipartido)
 
-U1 ─── J1
- │ \
- │  ─── J2
- │
-U2 ─── J2
- │
- └─── J3
-U3 ─── J2
- │
- └─── J4
+```mermaid
+graph LR
+    subgraph Usuarios
+        U1
+        U2
+        U3
+    end
+
+    subgraph Jogos
+        J1
+        J2
+        J3
+        J4
+    end
+
+    U1 --- J1
+    U1 --- J2
+    U2 --- J2
+    U2 --- J3
+    U3 --- J2
+    U3 --- J4
+```
  
 **Legenda:**
 * Nós U = usuários
