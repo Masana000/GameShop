@@ -135,7 +135,7 @@ O sistema utilizará **lista de adjacência em JSON**, ideal para grafos esparso
     { "userId": "U2", "gameId": "J1", "rating": 4 }
   ]
 }
-
+```
 ---
 
 ## 5. Backlog do Projeto
