@@ -20,79 +20,94 @@
 
 ## 1. Contexto e Motivação
 
-Plataformas digitais de jogos concentram um grande número de usuários que interagem entre si por meio de amizades, preferências e atividades dentro da plataforma. Essas interações geram uma rede complexa de conexões que, se bem analisadas, podem ser utilizadas para melhorar a experiência do usuário.
-
-Um dos principais desafios nesse contexto é a geração de recomendações relevantes, tanto de jogos quanto de conexões sociais. Sem um modelo estruturado, torna-se difícil identificar padrões, interesses em comum e relações indiretas entre usuários.
-
-Este projeto busca abordar esse problema por meio da modelagem dessas relações, permitindo explorar como conexões entre usuários e jogos podem ser utilizadas para sugerir conteúdos e melhorar a interação dentro da plataforma.
+Plataformas digitais de jogos, como Steam e Xbox Live, possuem milhões de usuários que interagem por meio de amizades e bibliotecas de jogos. 
+No entanto, muitos usuários têm dificuldade em descobrir novos jogos relevantes ou encontrar pessoas com interesses semelhantes dentro dessas 
+plataformas.
+Um problema específico observado é a baixa eficiência em recomendações simples baseadas apenas em popularidade ou categorias genéricas, sem 
+considerar relações sociais diretas, como amigos ou usuários com gostos semelhantes.
+Neste contexto, este projeto propõe modelar uma rede de usuários e jogos utilizando grafos, com foco na geração de recomendações baseadas em 
+conexões reais entre usuários (amigos em comum) e jogos compartilhados, permitindo explorar relações indiretas para melhorar a experiência do 
+usuário.
 
 ---
 
 ## 2. Objetivo Geral
 
-Desenvolver uma modelagem baseada em grafos capaz de representar usuários, jogos e suas relações, permitindo gerar sugestões de amizades e recomendações de jogos.
+Desenvolver um modelo baseado em grafos capaz de representar usuários, jogos e suas relações, permitindo gerar recomendações de amizades e 
+jogos com base na estrutura da rede.
 
 ---
 
 ## 3. Objetivos Específicos
 
-* [ ] Modelar a rede de usuários e suas relações de amizade
-* [ ] Representar a relação entre usuários e jogos
-* [ ] Implementar lógica de sugestão baseada em gostos gerais dos usuários
-* [ ] Implementar sugestão de amizades com base em amigos em comum
-* [ ] Implementar sugestão de jogos baseada nas interações dos amigos
+* Implementar cálculo de similaridade entre usuários com base em jogos em comum
+* Gerar lista ordenada de sugestões de amizade utilizando número de amigos em comum
+* Implementar recomendação de jogos baseada nos jogos dos amigos
+* Aplicar busca em largura (BFS) para identificar conexões indiretas entre usuários
+* Exibir recomendações com base em critérios definidos como quantidade de conexões
 
 ---
 
 ## 4. Público-Alvo / Caso de Uso Principal
 
 O sistema é voltado para usuários de plataformas digitais de jogos que desejam descobrir novos jogos e expandir sua rede de contatos.
-
-Um cenário de uso seria um jogador que, ao acessar a plataforma, recebe sugestões de novos amigos com base em conexões existentes e recomendações de jogos com base nas preferências de outros usuários e de seus próprios amigos.
+Um cenário de uso seria um jogador que, ao acessar a plataforma, recebe sugestões de novos amigos com base em conexões existentes e 
+recomendações de jogos com base nas preferências de outros usuários e de seus próprios amigos.
 
 ---
 
 ## 5. Justificativa Técnica — Por que Grafos?
 
-A Teoria dos Grafos é adequada para este problema pois permite representar de forma natural as relações entre diferentes entidades.
-
-Neste contexto:
-
-* Usuários podem ser representados como vértices
-* Jogos podem ser representados como vértices
-* Relações como amizade, interação ou preferência podem ser representadas como arestas
-
-Essa estrutura permite analisar conexões diretas e indiretas, como amigos em comum e jogos compartilhados, o que é essencial para sistemas de recomendação.
-
-Além disso, a utilização de grafos possibilita explorar diferentes formas de sugestão com base na estrutura da rede, sem a necessidade de modelagens mais complexas nesta fase inicial.
+A Teoria dos Grafos é adequada para este problema pois permite representar usuários e jogos como vértices e suas relações como arestas.
+Neste projeto, serão considerados dois tipos principais de relações:
+Grafo de amizades (usuário–usuário), não-dirigido
+Grafo bipartido (usuário–jogo), representando interações
+A recomendação de amizades será baseada na contagem de vizinhos em comum, que pode ser obtida por meio de busca em largura (BFS) de 
+profundidade 2.
+A recomendação de jogos será realizada por meio de algoritmos de filtragem colaborativa, considerando padrões de preferência e similaridade 
+entre usuários com gostos convergentes, a fim de sugerir títulos com base no comportamento e avaliações de perfis semelhantes.
+Dessa forma, o uso de grafos permite explorar conexões indiretas e padrões estruturais da rede para gerar recomendações mais relevantes.
 
 ---
 
 ## 6. Tipo de Grafo
 
-| Característica                   | Escolha                  | Justificativa breve                                 |
-| -------------------------------- | ------------------------ | --------------------------------------------------- |
-| Dirigido ou não-dirigido         | Não-dirigido (principal) | Relações de amizade são mútuas                      |
-| Ponderado ou não-ponderado       | Não-ponderado (inicial)  | Foco em conexões simples nesta fase                 |
-| Conectado / bipartido / geral    | Geral e bipartido        | Usuários (geral) e relação usuário-jogo (bipartido) |
-| Representação interna pretendida | Lista de adjacência      | Estrutura simples e eficiente                       |
+| Característica   | Escolha             | Justificativa                                |
+| ---------------- | ------------------- | -------------------------------------------- |
+| Dirigido ou não  | Não-dirigido        | Amizades são mútuas                          |
+| Ponderado ou não | Não-ponderado       | Similaridade baseada em contagem de conexões |
+| Tipo             | Geral + Bipartido   | Separação entre U–U e U–J                    |
+| Representação    | Lista de adjacência | Eficiência em grafos esparsos                |
 
 ---
 
 ## 7. Diagrama Conceitual
 
-        (Usuário A) -------- (Usuário B)
-             |                   |
-             |                   |
-         (Jogo 1)           (Jogo 2)
-             |                   |
-             |                   |
-        (Usuário C) -------- (Usuário D)
-**Legenda:**
+USUÁRIOS (U-U amizade)
 
-* Nós representam usuários e jogos
-* Arestas representam relações de amizade e interação
-* Conexões indiretas indicam possíveis recomendações
+(U1) -------- (U2)
+  |             |
+  |             |
+(U3) -------- (U4)
+
+INTERAÇÕES (U-J bipartido)
+
+U1 ─── J1
+ │ \
+ │  ─── J2
+ │
+U2 ─── J2
+ │
+ └─── J3
+U3 ─── J2
+ │
+ └─── J4
+ 
+**Legenda:**
+* Nós U = usuários
+* Nós J = jogos
+* Aresta U–U = amizade
+* Aresta U–J = interação
 
 ---
 
@@ -100,11 +115,11 @@ Além disso, a utilização de grafos possibilita explorar diferentes formas de 
 
 Antes de submeter, confirme:
 
-* [ ] Texto entre 300 e 600 palavras (seções 1 a 5)
-* [ ] Todos os campos da tabela de identificação preenchidos
-* [ ] Tipo de grafo especificado com justificativa
-* [ ] Diagrama presente e referenciado no texto
-* [ ] Arquivo nomeado como `E1_NomeGrupo_Grafos.docx` (versão Word) ou PR aberto (versão GitHub)
+* [x] Texto entre 300 e 600 palavras (seções 1 a 5)
+* [x] Todos os campos da tabela de identificação preenchidos
+* [x] Tipo de grafo especificado com justificativa
+* [x] Diagrama presente e referenciado no texto
+* [x] Arquivo nomeado como `E1_NomeGrupo_Grafos.docx` (versão Word) ou PR aberto (versão GitHub)
 
 ---
 
