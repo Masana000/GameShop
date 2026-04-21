@@ -86,7 +86,7 @@ Dessa forma, o uso de grafos permite explorar conexões indiretas e padrões est
 USUÁRIOS (U-U amizade)
 
 ```mermaid
-graph TD
+graph LR
     U1 --- U2
     U1 --- U3
     U2 --- U4
