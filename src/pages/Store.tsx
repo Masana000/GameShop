@@ -5,9 +5,10 @@ import { buildGraphs } from '../io/reader'
 import { suggestGamesByFriends } from '../algorithms/bfs'
 import { suggestGames } from '../algorithms/jaccard'
 import GameCard from '../components/GameCard'
+import Layout from '../components/Layout'
 
 export default function Store() {
-  const { currentUserId, users, games, interactions, buyGame, logout } = useStore()
+  const { currentUserId, users, games, interactions, buyGame } = useStore()
   const navigate = useNavigate()
 
   const user = users.find(u => u.id === currentUserId)!
@@ -49,33 +50,8 @@ export default function Store() {
   }, [friendSuggestions, jaccardSuggestions, users])
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
-      <header className="bg-gray-900 border-b border-gray-800 px-8 py-4 flex items-center justify-between sticky top-0 z-10">
-        <h1 className="text-lg font-bold">GameShop</h1>
-        <nav className="flex gap-8 text-sm text-gray-400">
-          <button className="text-white font-medium">Loja</button>
-          <button onClick={() => navigate('/profile')} className="hover:text-white transition-colors">
-            Biblioteca
-          </button>
-          <button onClick={() => navigate('/profile')} className="hover:text-white transition-colors">
-            Amigos
-          </button>
-          <button onClick={() => navigate('/admin')} className="hover:text-white transition-colors">
-            Admin
-          </button>
-        </nav>
-        <div className="flex items-center gap-4">
-          <span className="text-sm text-gray-300">{user.displayName}</span>
-          <button
-            onClick={logout}
-            className="text-xs text-gray-500 hover:text-white transition-colors"
-          >
-            Sair
-          </button>
-        </div>
-      </header>
-
-      <main className="max-w-6xl mx-auto px-8 py-10">
+    <Layout>
+      <div className="max-w-6xl mx-auto px-8 py-10">
         {recommendations.length > 0 && (
           <section className="mb-12">
             <h2 className="text-lg font-semibold mb-1">Recomendado para voce</h2>
@@ -113,7 +89,7 @@ export default function Store() {
             ))}
           </div>
         </section>
-      </main>
-    </div>
+      </div>
+    </Layout>
   )
 }
