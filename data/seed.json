@@ -1,0 +1,177 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "username": "caio",
+      "displayName": "Caio Silva",
+      "avatar": "",
+      "friends": ["u2", "u3"],
+      "library": ["g1", "g2", "g4"]
+    },
+    {
+      "id": "u2",
+      "username": "fillipy",
+      "displayName": "Fillipy Santos",
+      "avatar": "",
+      "friends": ["u1", "u4", "u5"],
+      "library": ["g1", "g6", "g5"]
+    },
+    {
+      "id": "u3",
+      "username": "leonardo",
+      "displayName": "Leonardo Costa",
+      "avatar": "",
+      "friends": ["u1", "u6"],
+      "library": ["g9", "g10", "g5"]
+    },
+    {
+      "id": "u4",
+      "username": "maria",
+      "displayName": "Maria Lima",
+      "avatar": "",
+      "friends": ["u2", "u7"],
+      "library": ["g8", "g7", "g2"]
+    },
+    {
+      "id": "u5",
+      "username": "joao",
+      "displayName": "João Pedro",
+      "avatar": "",
+      "friends": ["u2", "u6"],
+      "library": ["g1", "g3", "g2"]
+    },
+    {
+      "id": "u6",
+      "username": "ana",
+      "displayName": "Ana Beatriz",
+      "avatar": "",
+      "friends": ["u3", "u5", "u7"],
+      "library": ["g8", "g7", "g9", "g10"]
+    },
+    {
+      "id": "u7",
+      "username": "pedro",
+      "displayName": "Pedro Alves",
+      "avatar": "",
+      "friends": ["u4", "u6"],
+      "library": ["g10", "g5", "g6"]
+    },
+    {
+      "id": "u8",
+      "username": "sofia",
+      "displayName": "Sofia Rocha",
+      "avatar": "",
+      "friends": [],
+      "library": ["g7", "g8", "g2"]
+    }
+  ],
+  "games": [
+    {
+      "id": "g1",
+      "title": "Elden Ring",
+      "category": "RPG",
+      "description": "Mundo aberto sombrio criado em parceria com George R.R. Martin. Explore as Terras Intermédias e enfrente chefes épicos.",
+      "cover": "/covers/elden-ring.jpg",
+      "price": 199.9
+    },
+    {
+      "id": "g2",
+      "title": "Hades II",
+      "category": "RPG",
+      "description": "Mergulhe no submundo grego em um roguelike frenético com combate fluido e narrativa rica.",
+      "cover": "/covers/hades2.jpg",
+      "price": 99.9
+    },
+    {
+      "id": "g3",
+      "title": "Cyberpunk 2077",
+      "category": "RPG",
+      "description": "Aventura em mundo aberto ambientada na megalópole futurista Night City.",
+      "cover": "/covers/cyberpunk.jpg",
+      "price": 149.9
+    },
+    {
+      "id": "g4",
+      "title": "The Witcher 3",
+      "category": "RPG",
+      "description": "Como Geralt de Rívia, rastreie a filha adotiva por um continente em guerra.",
+      "cover": "/covers/witcher3.jpg",
+      "price": 79.9
+    },
+    {
+      "id": "g5",
+      "title": "GTA V",
+      "category": "Action",
+      "description": "Três criminosos tentam realizar os golpes mais ousados enquanto enfrentam um governo implacável.",
+      "cover": "/covers/gta5.jpg",
+      "price": 79.9
+    },
+    {
+      "id": "g6",
+      "title": "Sekiro",
+      "category": "Action",
+      "description": "Derrote chefes poderosos no Japão feudal como um shinobi de braço protético.",
+      "cover": "/covers/sekiro.jpg",
+      "price": 149.9
+    },
+    {
+      "id": "g7",
+      "title": "Stardew Valley",
+      "category": "Simulation",
+      "description": "Cultive sua fazenda, faça amigos na cidade e explore cavernas cheias de mistério.",
+      "cover": "/covers/stardew.jpg",
+      "price": 39.9
+    },
+    {
+      "id": "g8",
+      "title": "Minecraft",
+      "category": "Sandbox",
+      "description": "Construa, explore e sobreviva em um mundo infinito feito de blocos.",
+      "cover": "/covers/minecraft.jpg",
+      "price": 89.9
+    },
+    {
+      "id": "g9",
+      "title": "Valorant",
+      "category": "FPS",
+      "description": "Shooter tático de agentes com habilidades únicas. Precisão e estratégia são essenciais.",
+      "cover": "/covers/valorant.jpg",
+      "price": 0
+    },
+    {
+      "id": "g10",
+      "title": "CS2",
+      "category": "FPS",
+      "description": "O mais icônico shooter competitivo do mundo, completamente reconstruído na Source 2.",
+      "cover": "/covers/cs2.jpg",
+      "price": 0
+    }
+  ],
+  "interactions": [
+    { "userId": "u1", "gameId": "g1", "purchasedAt": "2026-01-10" },
+    { "userId": "u1", "gameId": "g2", "purchasedAt": "2026-01-15" },
+    { "userId": "u1", "gameId": "g4", "purchasedAt": "2026-02-01" },
+    { "userId": "u2", "gameId": "g1", "purchasedAt": "2026-01-12" },
+    { "userId": "u2", "gameId": "g6", "purchasedAt": "2026-02-03" },
+    { "userId": "u2", "gameId": "g5", "purchasedAt": "2026-02-20" },
+    { "userId": "u3", "gameId": "g9", "purchasedAt": "2026-01-05" },
+    { "userId": "u3", "gameId": "g10", "purchasedAt": "2026-01-06" },
+    { "userId": "u3", "gameId": "g5", "purchasedAt": "2026-03-01" },
+    { "userId": "u4", "gameId": "g8", "purchasedAt": "2026-01-20" },
+    { "userId": "u4", "gameId": "g7", "purchasedAt": "2026-02-10" },
+    { "userId": "u4", "gameId": "g2", "purchasedAt": "2026-03-05" },
+    { "userId": "u5", "gameId": "g1", "purchasedAt": "2026-01-18" },
+    { "userId": "u5", "gameId": "g3", "purchasedAt": "2026-02-14" },
+    { "userId": "u5", "gameId": "g2", "purchasedAt": "2026-03-10" },
+    { "userId": "u6", "gameId": "g8", "purchasedAt": "2026-01-25" },
+    { "userId": "u6", "gameId": "g7", "purchasedAt": "2026-02-05" },
+    { "userId": "u6", "gameId": "g9", "purchasedAt": "2026-02-18" },
+    { "userId": "u6", "gameId": "g10", "purchasedAt": "2026-03-02" },
+    { "userId": "u7", "gameId": "g10", "purchasedAt": "2026-01-30" },
+    { "userId": "u7", "gameId": "g5", "purchasedAt": "2026-02-22" },
+    { "userId": "u7", "gameId": "g6", "purchasedAt": "2026-03-08" },
+    { "userId": "u8", "gameId": "g7", "purchasedAt": "2026-02-01" },
+    { "userId": "u8", "gameId": "g8", "purchasedAt": "2026-02-15" },
+    { "userId": "u8", "gameId": "g2", "purchasedAt": "2026-03-12" }
+  ]
+}
