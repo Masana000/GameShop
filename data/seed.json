@@ -3,7 +3,7 @@
     {
       "id": "u1",
       "username": "caio",
-      "displayName": "Caio Silva",
+      "displayName": "Caio SiSiqueira",
       "avatar": "",
       "friends": ["u2", "u3"],
       "library": ["g1", "g2", "g4"]
@@ -11,7 +11,7 @@
     {
       "id": "u2",
       "username": "fillipy",
-      "displayName": "Fillipy Santos",
+      "displayName": "Fillipy Mendes",
       "avatar": "",
       "friends": ["u1", "u4", "u5"],
       "library": ["g1", "g6", "g5"]
@@ -19,7 +19,7 @@
     {
       "id": "u3",
       "username": "leonardo",
-      "displayName": "Leonardo Costa",
+      "displayName": "Leonardo Masanao",
       "avatar": "",
       "friends": ["u1", "u6"],
       "library": ["g9", "g10", "g5"]
