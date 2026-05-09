@@ -52,7 +52,7 @@ export default function GameCard({ game, owned, reason, onBuy, onClick }: Props)
 
         <div className="flex items-center justify-between mt-2">
           <span className="text-sm font-medium">
-            {game.price === 0 ? 'Gratuito' : `G$ ${game.price.toFixed(2)}`}
+            {game.price === 0 ? 'Gratuito' : `R$ ${game.price.toFixed(2)}`}
           </span>
           {!owned && onBuy && (
             <button

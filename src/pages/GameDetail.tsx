@@ -75,7 +75,7 @@ export default function GameDetail() {
 
             <div className="flex items-center gap-4">
               <span className="text-2xl font-bold">
-                {game.price === 0 ? 'Gratuito' : `G$ ${game.price.toFixed(2)}`}
+                {game.price === 0 ? 'Gratuito' : `R$ ${game.price.toFixed(2)}`}
               </span>
               {owned ? (
                 <span className="bg-green-700 text-white text-sm px-4 py-2 rounded">
